@@ -18,6 +18,7 @@ public class Fruits {
     private String name;
 
     @Column(name = "fruit_type")
+    @Enumerated(EnumType.STRING)
     private FruitTypeEnum fruitType;
 
     public Fruits(FruitsRequestDTO fruitsRequestDTO) {
