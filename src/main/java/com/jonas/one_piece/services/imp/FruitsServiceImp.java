@@ -8,6 +8,8 @@ import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FruitsServiceImp {
 
@@ -17,6 +19,10 @@ public class FruitsServiceImp {
     public Fruits createFruit(FruitsRequestDTO request) {
         Fruits fruits = new Fruits(request);
         return this.fruitsRepository.save(fruits);
+    }
+
+    public List<Fruits> listFruits(){
+        return this.fruitsRepository.findAll();
     }
 
 }

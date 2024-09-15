@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/fruits_demos")
 public class FruitsController {
@@ -25,11 +27,8 @@ public class FruitsController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public FruitsResponseDTO getFruit() {
-        FruitsResponseDTO fruitsResponseDTO = new FruitsResponseDTO();
-        fruitsResponseDTO.setName("Gomu-Gomu");
-        fruitsResponseDTO.setFruitType(FruitTypeEnum.PARAMERSIA);
-        return fruitsResponseDTO;
+    public List<Fruits> listFruits() {
+        return this.fruitsServiceImp.listFruits();
     }
 
 }

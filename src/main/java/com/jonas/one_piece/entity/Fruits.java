@@ -26,6 +26,10 @@ public class Fruits {
         this.fruitType = fruitsRequestDTO.getFruitType();
     }
 
+    public Fruits() {
+
+    }
+
     public Integer getId() {
         return this.id;
     }
